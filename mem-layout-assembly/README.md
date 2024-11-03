@@ -10,7 +10,7 @@ void func() {
     int a = 42;
     int* ptrA = &a;
 
-    int array[10];
+    int array[512];
     Object* obj = new Object();
     char* str = "Hello"; 
     StructType value = StructType {1, 2, 3}; 
@@ -74,9 +74,9 @@ void func() {
    - 定义指针 `ptrA` 并指向变量 `a` 的地址。
    - 示例：使用 `LEA` 指令加载 `a` 的地址到 `ptrA` 中。
 
-## 3. `int array[10];`
-   - 在栈上声明一个长度为 10 的整型数组 `array`。
-   - 示例：使用 `PUSH` 指令连续初始化每个元素，并使用 `LEA` 计算数组的起始地址。
+## 3. `int array[512];`
+   - 在栈上声明一个长度为 512 的整型数组 `array`。
+   - 示例：使用 `LEA` 计算数组的起始地址。自己想办法为数组分配空间
 
 ## 4. `Object* obj = new Object();`
    - 在堆上分配 `Object` 类型的空间，并将地址赋给指针 `obj`。
