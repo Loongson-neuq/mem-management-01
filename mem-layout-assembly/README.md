@@ -80,7 +80,8 @@ void func() {
 
 ## 4. `Object* obj = new Object();`
    - 在堆上分配 `Object` 类型的空间，并将地址赋给指针 `obj`。
-   - `Object` 本身不含有任何字段，但是具有三个虚函数`GetHashCode`，`ToString`，`Equals`。使用 C++ 式 virtual dispatch
+   - `Object` 本身不含有任何字段，但是具有三个虚函数`GetHashCode`，`ToString`，`Equals`。
+   - 直接在对象上储存 vtable 而不是 pVtable。三个函数的地址分别为 `<Program.exe+Object::GetHashCode>`， `<Program.exe+Object::ToString>`, `<Program.exe+Object::Equals>`
    - 忽略构造函数的调用
    - 示例：使用 `HEAP_ALLOC` 指令完成堆分配，并初始化指针。
 
