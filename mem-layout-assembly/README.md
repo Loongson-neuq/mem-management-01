@@ -80,6 +80,7 @@ void func() {
 
 ## 4. `Object* obj = new Object();`
    - 在堆上分配 `Object` 类型的空间，并将地址赋给指针 `obj`。
+   - `Object` 本身不含有任何字段，但是具有三个虚函数`GetHashCode`，`ToString`，`Equals`。使用 C++ 式 virtual dispatch
    - 忽略构造函数的调用
    - 示例：使用 `HEAP_ALLOC` 指令完成堆分配，并初始化指针。
 
@@ -89,6 +90,7 @@ void func() {
 
 ## 6. `StructType value = StructType {1, 2, 3};`
    - 声明一个 `StructType` 结构体 `value`，初始化字段 `field1 = 1`，`field2 = 2`，`field3 = 3`。
+   - `StructType` 的三个字段均为 `int32`
    - 示例：在栈上逐一声明和初始化字段，并计算结构体的起始地址。
 
 ## 7. `StructType* pValue = (StructType*)malloc(sizeof(StructType));`
