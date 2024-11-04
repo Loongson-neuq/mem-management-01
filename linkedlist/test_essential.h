@@ -1,6 +1,7 @@
-#include <../.assignment/linkedlist_test.h>
+#include "../.assignment/linkedlist_test.h"
+#include <stddef.h>
 
 #define BOOL int
 
-void* mock_malloc(size_t bytes);
-void  mock_free(void* ptr);
+void* malloc_mocked(size_t bytes);
+void  free_mocked(void* ptr);
